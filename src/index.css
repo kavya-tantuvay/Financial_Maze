@@ -1,28 +1,56 @@
-/* index.css (optional) */
-html, body, #root { height: 100%; margin: 0; }
+/* ===== Base ===== */
+:root { --vh: 1vh; }                    /* helpful if you ever use var(--vh) */
 
-* {
+html, body, #root {
+  height: 100%;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;      /* stop iOS zooming headings */
+  background: #87ceeb;
+  overflow: hidden;                    /* we handle scroll inside panels */
+}
+
+/* Canvas root sized to the *visual* viewport, not the layout viewport */
+.app-root {
+  width: 100vw;
+  height: 100dvh;                      /* fixes “zoomed out” on mobile */
+  background: #87ceeb;
   overflow: hidden;
 }
 
-#root {
-  width: 100vw;
-  height: 100vh;
+/* R3F canvas */
+canvas { display: block; cursor: pointer; touch-action: none; }
+
+/* ===== Start screen ===== */
+/* Never let tall content push Start button below the fold */
+.start-card {
+  max-height: min(92dvh, 760px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 0.25rem;              /* subtle gutter to avoid cutoffs */
 }
 
-canvas {
-  display: block;
-  cursor: pointer;
+/* ===== HUD scaling for small screens ===== */
+@media (max-width: 900px) {
+  .hud-scale-left  { transform: scale(0.82); transform-origin: top left; }
+  .hud-scale-right { transform: scale(0.82); transform-origin: top right; }
+}
+
+@media (max-width: 640px) {
+  .hud-scale-left  { transform: scale(0.72); }
+  .hud-scale-right { transform: scale(0.72); }
+}
+
+/* Optional: respect notches when you add fixed bars later */
+@supports (padding: max(0px)) {
+  .app-root { padding: env(safe-area-inset-top) env(safe-area-inset-right)
+                       env(safe-area-inset-bottom) env(safe-area-inset-left); }
 }
