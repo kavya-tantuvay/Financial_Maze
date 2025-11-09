@@ -12,7 +12,7 @@ Players navigate through a 3D environment, make **financial decisions**, and bal
 
 Every decision impacts your score and outcome — **think wisely, spend smartly, and find your exit!**
 
-demo
+
 https://github.com/user-attachments/assets/4eaa6c7f-f22a-4647-9a54-dab5cf4a8f56
 
 
