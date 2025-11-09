@@ -1,16 +1,189 @@
-# React + Vite
+# 💰 Financial Maze 3D
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🧭 Make Smart Money Moves. Escape the Maze Financially Free.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Overview
 
-## React Compiler
+**Financial Maze 3D** is a **React-based 3D simulation game** that transforms personal finance into an immersive maze adventure.  
+Players navigate through a 3D environment, make **financial decisions**, and balance their **wallet, savings, debt, and risk** while progressing toward **financial freedom**.  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Every decision impacts your score and outcome — **think wisely, spend smartly, and find your exit!**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎮 Gameplay Concept
+
+> “Each turn is a financial choice — save, spend, invest, or take risks.”
+
+Traverse through a **3D maze**, where every checkpoint affects your financial stats.  
+With **10 checkpoints** spread across multiple routes, you can **exit anytime**, but your **final score** depends on your **financial balance** when you do.
+
+---
+
+## 🧾 What's Inside
+
+💼 **Wallet + Savings + Debt + Risk**  
+🧩 **10 Checkpoints across multiple paths**  
+🚪 **Exit anytime — outcome based on finances**  
+🌫️ **Enhanced Graphics:** Fog, SSAO, Bloom  
+📊 **Real-time Stats Panel** to track finances  
+
+---
+
+## 🎯 Goal
+
+> 🏁 Achieve **Score ≥ 40** and **Debt ≤ 20** to win!
+
+---
+
+## 🕹️ Controls
+
+| Action | Key |
+|---------|-----|
+| Move | **Arrow Keys / WASD** |
+| Toggle Flashlight | **F** 🔦 |
+| Toggle Minimap | **M** 🗺️ |
+| Open Large Map | **L** |
+| Exit Game | **Esc** |
+
+---
+
+## 💼 Stats Panel (Live Dashboard)
+
+| Stat | Description |
+|------|--------------|
+| 👛 **Wallet** | Current available money |
+| 💵 **Savings** | Total investments/savings |
+| 💳 **Debt** | Borrowed amount |
+| 🎲 **Risk** | Risk exposure level |
+| 📊 **Score** | Overall performance |
+| 🔢 **Decisions** | Checkpoints cleared (0/10) |
+
+---
+
+## ✨ Visual & Technical Features
+
+✅ **3D Maze Rendering** with **React Three Fiber (Three.js)**  
+✅ **Realistic Lighting & Fog** effects  
+✅ **Bloom & SSAO** for cinematic visuals  
+✅ **HUD Overlay** for stats and goal tracking  
+✅ **Minimap** for spatial awareness  
+✅ **Interactive Finance System** — choices update score dynamically  
+✅ **Responsive Design** — works across browsers and devices  
+
+---
+
+## ⚙️ Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| **Frontend Framework** | React.js |
+| **3D Engine** | React Three Fiber / Three.js |
+| **State Management** | React Hooks / Context API |
+| **Styling** | Tailwind CSS / Styled Components |
+| **Animation** | Framer Motion / React Spring |
+| **Deployment** | Vercel / Netlify |
+
+---
+
+## 🧠 Technical Architecture
+
+```
+
+```
+                    ┌───────────────────────────┐
+                    │        React App          │
+                    │  (index.jsx / App.jsx)    │
+                    └────────────┬──────────────┘
+                                 │
+                ┌────────────────┴────────────────┐
+                │                                 │
+       ┌────────▼────────┐              ┌─────────▼────────┐
+       │   UI Components │              │  3D Scene Logic  │
+       │ (StatsPanel.jsx,│              │ (MazeScene.jsx,  │
+       │  Controls.jsx)  │              │  Player.jsx)     │
+       └────────┬────────┘              └─────────┬────────┘
+                │                                 │
+       ┌────────▼────────┐              ┌─────────▼────────┐
+       │ State Management│              │ Rendering Engine  │
+       │ (React Hooks /  │              │ (React Three      │
+       │ Context API)    │              │  Fiber + Three.js)│
+       └────────┬────────┘              └─────────┬────────┘
+                │                                 │
+        ┌───────▼─────────────────────────────────▼───────┐
+        │               Game Logic Layer                  │
+        │ - Financial decisions & checkpoint effects      │
+        │ - Collision detection & navigation              │
+        │ - Lighting, Fog, and Bloom controls             │
+        └────────────────────────────────────────────────┘
+```
+
+````
+
+---
+
+## ⚙️ 3. Setup Instructions
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/kavya-tantuvay/Financial_Maze.git
+cd Financial_Maze
+npm install
+npm run build
+````
+
+---
+
+## 🚀 4. Run the App
+
+Open **two terminal windows** (or use a split terminal):
+
+#### 🖥️ Terminal 1: Start the Backend
+
+```bash
+cd server
+npm run dev
+```
+
+#### 🌐 Terminal 2: Start the Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+Once both servers are running, open your browser and go to:
+👉 **[http://localhost:5144](http://localhost:5173)**
+
+---
+
+🎉 **Have Fun Exploring Financial Maze 3D!**
+Make smart money choices, manage your finances, and reach the EXIT when you're ready. 💰
+
+---
+
+## 🧑‍💻 Developers
+
+| Name               | Role                                           |
+| ------------------ | ---------------------------------------------- |
+| **Kavya Tantuvay-2023BCS032**        |  |
+| **Maheswari Mudadla-2023BCS037** |   |
+| **Nidhi Walke-2023BCS041**       |     |
+
+---
+
+## 💡 Future Enhancements
+
+* 🎵 Add **background music** and **sound effects**
+* 🧩 Introduce **multiple maze levels** with increasing complexity
+* 💾 Save player progress using **localStorage / Firebase**
+* 🏆 Add **leaderboard** and **score persistence**
+* 🤖 Include **AI-driven financial advisors (NPCs)**
+
+---
+
+
+
