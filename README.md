@@ -3,6 +3,7 @@
 ### 🧭 Make Smart Money Moves. Escape the Maze Financially Free.
 
 ---
+<img width="1910" height="899" alt="Screenshot 2025-11-09 122110" src="https://github.com/user-attachments/assets/5f9c84f0-f9d3-42e5-b4f4-529adfe0b72f" />
 
 ## 🌐 Overview
 
@@ -11,7 +12,12 @@ Players navigate through a 3D environment, make **financial decisions**, and bal
 
 Every decision impacts your score and outcome — **think wisely, spend smartly, and find your exit!**
 
+demo
+https://github.com/user-attachments/assets/4eaa6c7f-f22a-4647-9a54-dab5cf4a8f56
+
+
 ---
+
 
 ## 🎮 Gameplay Concept
 
