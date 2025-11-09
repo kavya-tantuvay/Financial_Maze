@@ -1,4 +1,5 @@
-<!-- # React + Vite
+<!-- 
+# React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -13,9 +14,8 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 ## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project. -->
-
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project. 
+-->
 
 # 💰 Financial Maze 3D
 
@@ -113,31 +113,31 @@ You can **exit anytime**, but your **final financial outcome** depends on your c
 
 The **Financial Maze 3D** architecture is modular, separating 3D rendering, UI logic, and state management.
 
-                    ┌───────────────────────────┐
-                    │        React App          │
-                    │  (index.jsx / App.jsx)    │
-                    └────────────┬──────────────┘
-                                 │
-                ┌────────────────┴────────────────┐
-                │                                 │
-       ┌────────▼────────┐              ┌─────────▼────────┐
-       │   UI Components │              │  3D Scene Logic  │
-       │ (StatsPanel.jsx,│              │ (MazeScene.jsx,  │
-       │  Controls.jsx)  │              │  Player.jsx)     │
-       └────────┬────────┘              └─────────┬────────┘
-                │                                 │
-       ┌────────▼────────┐              ┌─────────▼────────┐
-       │ State Management│              │ Rendering Engine  │
-       │ (React Hooks /  │              │ (React Three      │
-       │ Context API)    │              │  Fiber + Three.js)│
-       └────────┬────────┘              └─────────┬────────┘
-                │                                 │
-        ┌───────▼─────────────────────────────────▼───────┐
-        │               Game Logic Layer                  │
-        │ - Financial decisions & checkpoint effects      │
-        │ - Collision detection & navigation              │
-        │ - Lighting, Fog, and Bloom controls             │
-        └────────────────────────────────────────────────┘
+                ┌───────────────────────────┐
+                │        React App          │
+                │  (index.jsx / App.jsx)    │
+                └────────────┬──────────────┘
+                             │
+            ┌────────────────┴────────────────┐
+            │                                 │
+   ┌────────▼────────┐              ┌─────────▼────────┐
+   │   UI Components │              │  3D Scene Logic  │
+   │ (StatsPanel.jsx,│              │ (MazeScene.jsx,  │
+   │  Controls.jsx)  │              │  Player.jsx)     │
+   └────────┬────────┘              └─────────┬────────┘
+            │                                 │
+   ┌────────▼────────┐              ┌─────────▼────────┐
+   │ State Management│              │ Rendering Engine  │
+   │ (React Hooks /  │              │ (React Three      │
+   │ Context API)    │              │  Fiber + Three.js)│
+   └────────┬────────┘              └─────────┬────────┘
+            │                                 │
+    ┌───────▼─────────────────────────────────▼───────┐
+    │               Game Logic Layer                  │
+    │ - Financial decisions & checkpoint effects      │
+    │ - Collision detection & navigation              │
+    │ - Lighting, Fog, and Bloom controls             │
+    └────────────────────────────────────────────────┘
 
 ---
 
@@ -147,15 +147,11 @@ The **Financial Maze 3D** architecture is modular, separating 3D rendering, UI l
 ```bash
 git clone https://github.com/<your-username>/FinancialMaze3D.git
 cd FinancialMaze3D
-### 2️⃣ Install dependencies
-```bash
+2️⃣ Install dependencies
 npm install
-
-### 3️⃣ Run locally
-```bash
+3️⃣ Run locally
 npm run dev
-### 4️⃣ Build for production
-```bash
+4️⃣ Build for production
 npm run build
 ---
 📸 Game Screens
@@ -165,8 +161,8 @@ npm run build
 | 🌀 **Maze**         | 3D environment with financial checkpoints |
 | 💼 **Stats Panel**  | Real-time financial dashboard             |
 | 🚪 **Exit Screen**  | Final results based on performance        |
-![Start Screen](assets/start.png)
-![Gameplay](assets/gameplay.png)
-![Exit Screen](assets/exit.png)
+---
+🏆 Credits
 
-
+Developed by[Kavya Tantuvay/2023BCS032][Maheswari Mudadla/2023BCS037][Nidhi Walke/2023BCS041]
+            
