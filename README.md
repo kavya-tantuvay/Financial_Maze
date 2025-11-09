@@ -160,7 +160,7 @@ Once open your browser and go to:
 ---
 ## 🎥 Demo Video
 
-https://github.com/kavya-tantuvay/FINANCIAL_MAZE/public/assets/DemoVid.mp4
+[https://github.com/kavya-tantuvay/FINANCIAL_MAZE/public/assets/DemoVid.mp4](https://github.com/user-attachments/assets/d788664e-a47e-4d54-8415-35fd5b8162ca)
 ---
 
 🎉 **Have Fun Exploring Financial Maze 3D!**
