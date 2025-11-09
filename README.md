@@ -152,6 +152,10 @@ Once open your browser and go to:
 👉 **(http://localhost:5173)**
 
 ---
+## 🎥 Demo Video
+
+https://github.com/your-username/your-repo-name/assets/your-video-id
+---
 
 🎉 **Have Fun Exploring Financial Maze 3D!**
 Make smart money choices, manage your finances, and reach the EXIT when you're ready. 💰
