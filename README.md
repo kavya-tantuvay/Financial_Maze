@@ -8,7 +8,8 @@
 ## 🌐 Overview
 
 **Financial Maze 3D** is a **React-based 3D simulation game** that transforms personal finance into an immersive maze adventure.  
-Players navigate through a 3D environment, make **financial decisions**, and balance their **wallet, savings, debt, and risk** while progressing toward **financial freedom**.  
+Players navigate through a 3D environment, make **financial decisions**, and balance their **wallet, savings, debt, and risk** while progressing toward **financial freedom**. 
+🎮 **Live Demo:** https://financialmaze.vercel.app/
 
 Every decision impacts your score and outcome — **think wisely, spend smartly, and find your exit!**
 
