@@ -84,7 +84,7 @@ With **10 checkpoints** spread across multiple routes, you can **exit anytime**,
 | **State Management** | React Hooks / Context API |
 | **Styling** | Tailwind CSS / Styled Components |
 | **Animation** | Framer Motion / React Spring |
-| **Deployment** | Vercel / Netlify |
+| **Deployment** | Vercel |
 
 ---
 
@@ -139,24 +139,17 @@ npm run build
 
 ## 🚀 4. Run the App
 
-Open **two terminal windows** (or use a split terminal):
+Open **terminal window** :
 
-#### 🖥️ Terminal 1: Start the Backend
-
-```bash
-cd server
-npm run dev
-```
-
-#### 🌐 Terminal 2: Start the Frontend
+#### 🌐 Terminal 1: Start the Frontend
 
 ```bash
 cd client
 npm run dev
 ```
 
-Once both servers are running, open your browser and go to:
-👉 **[http://localhost:5144](http://localhost:5173)**
+Once open your browser and go to:
+👉 **(http://localhost:5173)**
 
 ---
 
