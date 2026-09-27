@@ -1,26 +1,12 @@
 # Financial Maze 3D
 
+### ▶ Play it: **[financial-maze.vercel.app](https://financial-maze.vercel.app)**
+
 An interactive 3D browser game that teaches Indian personal finance. You navigate a glowing neon maze, and at every junction you make a real money decision — the kind an 18–25 year old in India actually faces when the first salary lands.
 
 Every choice moves three scores and shows you **why** it was smart or expensive, using real Indian numbers: SIPs, EPF, ELSS, term insurance, home loans, the old vs new tax regime.
 
 Built with React and React Three Fiber. No backend, no database, no login — progress is saved in your browser's `localStorage`.
-
----
-
-## Screenshots
-
-> Add your own screenshots here.
-
-| Screen | Image |
-|---|---|
-| Start screen | `docs/screenshot-start.png` |
-| Level 1 maze | `docs/screenshot-maze.png` |
-| Decision popup | `docs/screenshot-decision.png` |
-| Feedback card | `docs/screenshot-feedback.png` |
-| Final report | `docs/screenshot-report.png` |
-
-To capture them: run the game, press `Win + Shift + S`, and save into a `docs/` folder.
 
 ---
 
@@ -129,9 +115,43 @@ At the end of each level you get a grade (A+ to D) against the best score that w
 | Audio | **Web Audio API** | Sounds are synthesised in code — zero audio files to download |
 | Font | **Poppins** via Google Fonts | |
 
-Only `useState`, `useEffect`, `useRef`, `useMemo`, `useCallback`, `useContext`, `useReducer` and `useLayoutEffect` are used — no advanced patterns.
+No state library and no physics engine — React's built-in hooks plus a single reducer cover the whole game.
 
-**Bundle size** (gzipped): ~176 KB three.js + ~45 KB React + ~68 KB app code. three.js is split into its own chunk so browsers cache it separately.
+**Bundle size**, measured from the production deploy (gzipped):
+
+| Chunk | Gzipped |
+|---|---|
+| `three-*.js` | 177 KB |
+| `react-*.js` | 46 KB |
+| `index-*.js` (app) | 69 KB |
+| `index-*.css` | 4 KB |
+
+three.js is split into its own chunk via `manualChunks`, so browsers keep it cached between deploys while the game code changes.
+
+---
+
+## Rendering performance
+
+The target is the browser's frame budget: `requestAnimationFrame` runs at the display's refresh rate, so a 60 Hz screen allows **16.7 ms per frame**. Everything below exists to stay inside it.
+
+**Draw calls — the maze is 3 draw calls, not 200+**
+A level holds 200+ wall blocks. Rendering each as its own mesh would mean a separate GPU command per wall, per frame. `Maze.jsx` uses `<instancedMesh>` instead: one geometry and one material, drawn many times from a matrix buffer. The Tron look needs three stacked layers per wall (body, glowing cap, dark inlay), so it costs **three** instanced meshes regardless of how large the maze is.
+
+**React never re-renders during animation**
+The player's position lives in a ref, not state. `Player.jsx` writes it inside `useFrame`; `FollowCamera.jsx` reads the same ref. Keyboard and joystick input are also refs. Putting any of this in `useState` would trigger reconciliation 60 times a second purely to move a sphere. React re-renders only on real game events — opening a decision, completing a level.
+
+**Fragment cost is capped**
+`<Canvas dpr={[1, 2]}>` limits device pixel ratio. A 3× display would otherwise shade nine times the pixels of a 1× one, and fragment shading is where a scene like this gets expensive. The canvas also requests `powerPreference: "high-performance"` to prefer a discrete GPU.
+
+**Collision is O(1), not O(walls)**
+`parseMaze` builds a boolean `solid[row][col]` lookup once per level (memoised with `useMemo`). Because the maze is a grid, only the 3×3 cell neighbourhood around the player can possibly be touching it — so collision is nine cell lookups no matter how big the level is, with a circle-vs-box test using squared distances to avoid `sqrt` in the inner loop.
+
+**Movement is frame-rate independent**
+Delta is clamped (`Math.min(delta, 0.05)`): a backgrounded tab can otherwise return a multi-second delta and teleport the player through a wall. The follow camera eases with `1 - e^(-k·dt)` rather than a fixed lerp factor, so it behaves identically at 60 Hz and 144 Hz — a fixed factor would make the camera catch up more than twice as fast on a high-refresh monitor.
+
+**Smaller things:** axis-separated collision so the player slides along walls instead of sticking; movement vectors normalised so diagonals aren't ~1.41× faster; `useLayoutEffect` for instance matrices so walls are never painted at the origin; fog plus a bounded camera `far` to limit visible distance; `depthWrite={false}` on the transparent glow disc; audio synthesised with the Web Audio API so there are no sound files to download.
+
+> **Not measured.** These are optimizations against known cost centres in WebGL and React, not against a profile. There is no FPS counter or benchmark in this repository, and the game has not been tested on low-end mobile — where the shadow pass and the emissive materials would be the first things to investigate.
 
 ---
 
